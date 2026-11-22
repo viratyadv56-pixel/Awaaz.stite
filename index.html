@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Awaaz AI | AI Voice Calling Agent for Real Estate</title>
+<meta name="description" content="Awaaz AI answers every property enquiry, follows up with every lead and books site visits in Hindi and English, 24/7.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Awaaz AI | AI Voice Calling Agent for Real Estate">
+<meta property="og:description" content="Answers every property enquiry, follows up with every lead and books site visits in Hindi and English, 24/7.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e11d2e;--red2:#b80f1f;--ink:#0d0d0f;--mu:#5b5f66;--bg:#fff;--soft:#f6f6f8;--ln:#e6e6ea;--tint:#fdecee;--ok:#16a34a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Hind,system-ui,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:60}
+h1,h2,h3{font-family:Manrope,Hind,system-ui,sans-serif;margin:0 0 .5em;line-height:1.12;letter-spacing:-.025em}
+h1{font-size:clamp(2.4rem,6vw,4.1rem);font-weight:800}
+h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em;color:var(--mu);max-width:60ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.w{max-width:1140px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+.soft{background:var(--soft)}
+.sub{margin-bottom:36px}
+.sub.c{text-align:center}.sub.c p{margin-inline:auto}
+.red{color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 .95rem Manrope,sans-serif;text-decoration:none;padding:13px 22px;border-radius:12px;border:1.5px solid var(--red);cursor:pointer;color:#fff;background:var(--red);transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(225,29,46,.35);background:var(--red2)}
+.btn.k{background:var(--ink);border-color:var(--ink)}.btn.k:hover{box-shadow:0 10px 26px rgba(0,0,0,.3);background:#000}
+.btn.o{background:#fff;color:var(--ink);border-color:var(--ink)}.btn.o:hover{background:var(--soft);box-shadow:none}
+.btn.wa{background:#1fa855;border-color:#1fa855}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--ln)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font:800 1.3rem Manrope,sans-serif;text-decoration:none}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--mu);font-size:.95rem;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a[aria-current]{color:var(--ink);border-color:var(--red)}
+.mb{display:none;background:#fff;border:1px solid var(--ln);border-radius:10px;width:42px;height:42px;place-items:center;cursor:pointer}
+.badge{display:inline-flex;gap:8px;align-items:center;background:var(--tint);color:var(--red2);font-weight:600;font-size:.85rem;padding:5px 14px;border-radius:99px;margin-bottom:18px}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--red)}
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding:48px 22px 40px}
+.hero p.l{font-size:1.15rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;max-width:440px}
+.mini div{display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-weight:600;font-size:.9rem;line-height:1.3}
+.ic{width:42px;height:42px;border-radius:12px;background:var(--tint);color:var(--red);display:inline-grid;place-items:center;flex:none}
+.ic svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hv{position:relative;border-radius:28px;overflow:hidden;min-height:480px;background:#dbe7f3;box-shadow:0 30px 70px rgba(13,13,15,.18)}
+.hv>svg{position:absolute;inset:0;width:100%;height:100%}
+.phone{position:absolute;right:10%;top:30px;width:218px;height:430px;border-radius:38px;border:8px solid #0d0d0f;background:linear-gradient(180deg,#1b1b1f,#0b0b0d);box-shadow:0 30px 60px rgba(0,0,0,.45);transform:rotate(6deg);animation:fl 6s ease-in-out infinite alternate;overflow:hidden;color:#fff;text-align:center}
+.notch{position:absolute;top:7px;left:50%;width:78px;height:20px;border-radius:12px;background:#000;transform:translateX(-50%)}
+.scr{height:100%;display:flex;flex-direction:column;align-items:center;padding:64px 14px 22px}
+.av{width:78px;height:78px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 9px rgba(225,29,46,.2),0 0 0 20px rgba(225,29,46,.1);animation:ring 2s ease-out infinite}
+.scr b{font:700 1.15rem Manrope,sans-serif;margin-top:30px}
+.scr small{color:#a3a3ad}
+.wave{display:flex;align-items:center;gap:3px;height:34px;margin:16px 0}
+.wave i{width:4px;border-radius:3px;background:var(--red);height:30%;animation:wv 1.1s ease-in-out infinite}
+.ctl{display:flex;gap:18px;margin-top:auto;font-size:.7rem;color:#a3a3ad}
+.ctl span{display:grid;gap:4px;justify-items:center}.ctl i{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12)}
+.end{width:56px;height:56px;border-radius:50%;background:#e5242f;margin-top:16px}
+.bub{position:absolute;left:5%;top:34px;max-width:200px;background:var(--red);color:#fff;border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:.92rem;line-height:1.4;box-shadow:0 16px 36px rgba(225,29,46,.4);animation:pop .6s .6s both}
+.toast{position:absolute;left:6%;bottom:26px;display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:10px 14px;font-size:.82rem;line-height:1.35;color:var(--mu);box-shadow:0 14px 36px rgba(0,0,0,.2);animation:pop .5s 2.2s both,fl2 4s 2.8s ease-in-out infinite alternate}
+.toast b{display:block;font:700 .88rem Manrope,sans-serif;color:var(--ink)}
+.ck{width:28px;height:28px;border-radius:50%;background:#dcfce7;color:var(--ok);display:grid;place-items:center;font-style:normal;font-weight:700}
+@keyframes fl{to{transform:translateY(-10px) rotate(6deg)}}
+@keyframes fl2{to{transform:translateY(-8px)}}
+@keyframes ring{50%{box-shadow:0 0 0 13px rgba(225,29,46,.2),0 0 0 28px rgba(225,29,46,.05)}}
+@keyframes wv{50%{height:100%}}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96)}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}}
+.ht>*{animation:up .7s both}.ht>*:nth-child(2){animation-delay:.1s}.ht>*:nth-child(3){animation-delay:.2s}.ht>*:nth-child(4){animation-delay:.3s}.ht>*:nth-child(5){animation-delay:.4s}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:#fff;border:1px solid var(--ln);border-radius:18px;padding:24px;box-shadow:0 6px 24px rgba(13,13,15,.04);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--red);box-shadow:0 16px 36px rgba(225,29,46,.12)}
+.card p{margin:0}
+.card .ic{margin-bottom:14px}
+.row{display:flex;gap:16px;align-items:center}.row .ic{margin:0}
+.dm{display:grid;grid-template-columns:170px 1fr;border:1px solid var(--ln);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(13,13,15,.1)}
+.dm aside{background:var(--ink);color:#d4d4da;padding:18px 12px;display:grid;gap:4px;align-content:start;font-size:.88rem}
+.dm aside b{color:#fff;font:800 1.05rem Manrope,sans-serif;padding:0 10px 14px}
+.dm aside span{padding:8px 10px;border-radius:9px}.dm aside .on{background:var(--red);color:#fff}
+.dmain{padding:18px;min-width:0}
+.dh{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.82rem;color:var(--mu);margin-bottom:12px}.dh b{font:700 1.05rem Manrope,sans-serif;color:var(--ink)}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kp div{border:1px solid var(--ln);border-radius:12px;padding:10px 12px;font-size:.78rem;color:var(--mu)}.kp b{display:block;font:800 1.2rem Manrope,sans-serif;color:var(--ink);white-space:nowrap}
+.bars{display:flex;align-items:flex-end;gap:5px;height:70px;margin:14px 0}
+.bars i{flex:1;height:var(--h);background:linear-gradient(var(--red),#ff6b76);border-radius:4px 4px 0 0;transform-origin:bottom;transform:scaleY(0);transition:transform .8s ease}
+.in .bars i{transform:scaleY(1)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:420px}
+th{text-align:left;color:var(--mu);font-weight:500;padding:7px 8px;border-bottom:1px solid var(--ln)}td{padding:9px 8px;border-bottom:1px solid var(--ln)}
+.st{display:inline-block;padding:1px 10px;border-radius:99px;font-size:.76rem;background:#dcfce7;color:#15803d}.st.b{background:#e0ecff;color:#1d4ed8}.st.n{background:#ffedd5;color:#c2410c}
+.split{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.ticks{list-style:none;padding:0;margin:16px 0 24px;display:grid;gap:10px}.ticks li{display:flex;gap:10px}.ticks li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font-size:.8rem;display:grid;place-items:center;margin-top:3px}
+.steps{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.steps .card b{font:800 2.2rem Manrope,sans-serif;color:var(--red);display:block;line-height:1;margin-bottom:12px}
+.pr{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));align-items:stretch}
+.pr .card{position:relative}
+.pr strong{display:block;font:800 2.3rem Manrope,sans-serif;letter-spacing:-.03em;line-height:1.1;margin:6px 0}.pr strong small{font-size:1rem;color:var(--mu);font-weight:500}
+.pr s{color:var(--mu)}
+.hot{border:2px solid var(--red)}
+.tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font:700 .78rem Manrope,sans-serif;padding:3px 14px;border-radius:99px;white-space:nowrap}
+.note{font-size:.88rem;color:var(--mu);margin-top:14px}
+.calc{margin-top:26px;padding:26px;background:var(--ink);color:#fff;border-radius:20px}
+.calc label{font:700 1rem Manrope,sans-serif;display:block;margin-bottom:12px}
+input[type=range]{width:100%;accent-color:var(--red)}
+.cr{display:flex;flex-wrap:wrap;gap:12px 40px;margin-top:16px}.cr span{font-size:.85rem;color:#b9b9c2;display:block}.cr output{font:800 1.7rem Manrope,sans-serif}
+.tiles{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.tile{border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}.tile p{margin:0 0 10px}
+.t1{background:var(--tint)}.t2{background:var(--ink);color:#fff}.t2 p{color:#c9c9d1}.t3{background:var(--red);color:#fff}.t3 p{color:#ffd9dc}
+.t3 .btn{background:#fff;color:var(--red);border-color:#fff}
+.tl{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.tl .card{border-top:4px solid var(--red)}
+.hl{margin-top:24px;padding:16px 20px;border-radius:14px;background:var(--tint);border:1px solid #f6c3c8;color:var(--ink);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.chips span{border:1px solid var(--ln);background:#fff;border-radius:99px;padding:5px 14px;font-size:.92rem}
+.prop{background:#fff;border:1px solid var(--ln);border-radius:18px;overflow:hidden;transition:transform .25s,box-shadow .25s}.prop:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(13,13,15,.12)}
+.pa{overflow:hidden}.pa svg{display:block;width:100%;height:auto;transition:transform .6s}.prop:hover svg{transform:scale(1.06)}
+.pb{padding:16px 20px 20px}.pb h3{margin:8px 0 2px}.pb p{margin:0 0 10px}.pf{display:flex;justify-content:space-between;align-items:baseline}.pf b{font:800 1.25rem Manrope,sans-serif}.pf span{font-size:.85rem;color:var(--mu)}
+details{border:1px solid var(--ln);border-radius:14px;padding:4px 20px;margin-bottom:12px;background:#fff}
+summary{cursor:pointer;font:700 1.05rem Manrope,sans-serif;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--red);font-size:1.5rem;line-height:1;transition:transform .2s}details[open] summary::after{transform:rotate(45deg)}details p{margin:0 0 14px}
+.fm{padding:30px;display:grid;gap:18px;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--ln);border-radius:20px;box-shadow:0 20px 50px rgba(13,13,15,.08)}
+.f{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}
+.fm label,.fm legend{font:700 .9rem Manrope,sans-serif}.fm label small{font:400 .8rem Hind,sans-serif;color:var(--mu)}
+.fm input,.fm select,.fm textarea{width:100%;background:#fff;border:1.5px solid var(--ln);border-radius:10px;color:var(--ink);font:inherit;font-size:1rem;padding:11px 14px}
+.fm textarea{min-height:100px;resize:vertical}.fm input:focus,.fm select:focus,.fm textarea:focus{border-color:var(--red);outline:3px solid rgba(225,29,46,.2)}
+.fm fieldset{border:0;padding:0;margin:0}.chk{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chk label{display:flex;align-items:center;gap:8px;font:400 .95rem Hind,sans-serif;border:1.5px solid var(--ln);border-radius:99px;padding:6px 14px;cursor:pointer}.chk input{width:auto;accent-color:var(--red)}
+.fm .btn{width:100%;font-size:1rem}#fmsg{margin:0;font-size:.9rem;min-height:1.2em}
+footer{order:5;border-top:1px solid var(--ln);padding:48px 0 32px;font-size:.92rem;background:var(--soft)}
+.fg{display:grid;gap:32px;grid-template-columns:1.4fr 1fr 1fr}footer h3{font-size:.95rem}footer ul{list-style:none;margin:0;padding:0}footer li{margin-bottom:8px}footer li a{color:var(--mu);text-decoration:none}footer li a:hover{color:var(--red)}
+.legal{order:3;padding:56px 0}.legal h3{margin-top:1.4em}
+.js .pg{display:none}.js .pg.on{display:block;animation:up .4s ease}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}.js .rv.in{opacity:1;transform:none}
+.pbar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;z-index:70;background:var(--red);transform-origin:left;transform:scaleX(0)}
+.btn{position:relative;overflow:hidden}
+.hero .btn:not(.o)::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);animation:shine 4.5s 2s infinite}
+@keyframes shine{to{left:140%}}
+.hero{position:relative}.hero::before{content:'';position:absolute;left:-60px;top:20px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(225,29,46,.13),transparent 65%);filter:blur(24px);z-index:-1;animation:drift 10s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(60px,50px)}}
+.cloud{animation:cl 40s linear infinite}.cloud.b{animation-duration:60s;animation-delay:-25s}@keyframes cl{from{transform:translateX(-140px)}to{transform:translateX(700px)}}
+.car{animation:car 9s linear infinite}@keyframes car{from{transform:translateX(-90px)}to{transform:translateX(690px)}}
+.lit{animation:lit 3s ease-in-out infinite}@keyframes lit{0%,100%{opacity:0}50%{opacity:.9}}
+.rip{position:absolute;right:calc(10% + 8px);top:120px;width:200px;height:200px;pointer-events:none}.rip i{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(225,29,46,.55);animation:rp 3.6s ease-out infinite;opacity:0}.rip i:nth-child(2){animation-delay:1.2s}.rip i:nth-child(3){animation-delay:2.4s}@keyframes rp{from{transform:scale(.4);opacity:.8}to{transform:scale(2.4);opacity:0}}
+.mq{background:var(--ink);color:#fff;overflow:hidden;padding:16px 0;white-space:nowrap}.mq div{display:inline-flex;animation:mq 30s linear infinite}.mq span{font:700 1rem Manrope,sans-serif;display:inline-flex;align-items:center;gap:44px;margin-right:44px}.mq span::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--red)}@keyframes mq{to{transform:translateX(-50%)}}
+.flow{height:4px;border-radius:2px;margin-bottom:26px;position:relative;background:repeating-linear-gradient(90deg,rgba(225,29,46,.4) 0 8px,transparent 8px 16px)}.flow i{position:absolute;top:-5px;left:0;width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(225,29,46,.2);animation:run 4s ease-in-out infinite alternate}@keyframes run{to{left:calc(100% - 14px)}}
+.dm .st.n::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:#c2410c;margin-right:6px;animation:bl 1.2s infinite}@keyframes bl{50%{opacity:.25}}
+@media (max-width:700px){.rip{display:none}}
+@media (max-width:900px){.hero,.split,.fg{grid-template-columns:1fr}.mb{display:grid}.nav ul{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:14px;padding:16px 22px 20px;background:#fff;border-bottom:1px solid var(--ln)}.nav ul.open{display:flex}.nav .btn{display:none}section{padding:52px 0}.hv{min-height:440px}}
+@media (max-width:700px){.dm{grid-template-columns:1fr}.dm aside{display:none}.kp{grid-template-columns:1fr 1fr}.fm{grid-template-columns:1fr;padding:20px}.dm table{min-width:0}.dm th:nth-child(3),.dm td:nth-child(3){display:none}.hv{min-height:560px}.bub{top:16px;left:4%;max-width:190px;font-size:.88rem}.phone{top:104px;right:2%;transform:rotate(6deg) scale(.84);transform-origin:top right;animation:none}.toast{left:4%;bottom:18px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.pbar{will-change:transform;pointer-events:none}
+.btn:active{transform:translateY(0) scale(.98)}
+.card,.prop,.tile,.dm,.calc,.hl{will-change:transform}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+
+</style>
+<script>document.documentElement.className='js'</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<pattern id="gl" width="60" height="70" patternUnits="userSpaceOnUse"><rect x="9" y="12" width="42" height="42" rx="2" fill="#38506e"/><rect x="9" y="12" width="21" height="42" fill="#5d7fa6" opacity=".5"/><rect x="4" y="56" width="52" height="6" fill="#cfc8bd"/></pattern>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fc6ec"/><stop offset="1" stop-color="#fde8d6"/></linearGradient>
+</defs></svg>
+
+<div class='pbar' id='pbar' aria-hidden='true'></div>
+<header><div class="w nav">
+<a class="logo" href="#home" aria-label="Awaaz AI home"><svg width="32" height="24" viewBox="0 0 30 22" aria-hidden="true"><g stroke="#e11d2e" stroke-width="3" stroke-linecap="round"><path d="M3 9v4"/><path d="M9 5v12"/><path d="M15 1v20" stroke="#0d0d0f"/><path d="M21 5v12"/><path d="M27 9v4"/></g></svg>Awaaz AI</a>
+<nav aria-label="Main"><ul id="menu"><li><a href="#home">Home</a></li><li><a href="#features">Features</a></li><li><a href="#how">How It Works</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+<a class="btn k" href="#contact">Book a Demo</a>
+<button class="mb" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+
+<main>
+<!-- HOME -->
+<div class="pg" id="p-home">
+<div class="w hero">
+<div class="ht">
+<span class="badge"><i></i>AI Voice Automation for Real Estate</span>
+<h1>Never Miss Another <span class="red">Property Lead.</span></h1>
+<p class="l">Meet your AI voice agent that answers every call, follows up with every enquiry and books more property site visits — 24/7, in Hindi and English.</p>
+<div class="ctas"><a class="btn" href="#contact">Book a Free Demo</a><a class="btn o" href="#features">Explore Features</a></div>
+<div class="mini"><div><span class="ic" data-i="clock"></span>24/7 Availability</div><div><span class="ic" data-i="bolt"></span>Faster Follow-ups</div><div><span class="ic" data-i="home"></span>More Site Visits</div></div>
+</div>
+<div class="hv" role="img" aria-label="Illustration of an apartment building with the Awaaz AI call screen on a phone">
+<svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="600" height="480" fill="url(#sk)"/><g class='cloud'><ellipse cx='90' cy='70' rx='46' ry='14' fill='#fff' opacity='.85'/><ellipse cx='120' cy='60' rx='30' ry='14' fill='#fff' opacity='.85'/></g><g class='cloud b'><ellipse cx='300' cy='40' rx='40' ry='12' fill='#fff' opacity='.75'/><ellipse cx='325' cy='33' rx='24' ry='11' fill='#fff' opacity='.75'/></g><rect x="380" y="150" width="90" height="260" fill="#c9d3df"/><rect x="480" y="190" width="80" height="220" fill="#d6dde6"/><rect x="40" y="110" width="320" height="300" fill="#e8e2d8"/><rect x="40" y="100" width="320" height="12" fill="#b9b2a6"/><rect x="50" y="122" width="300" height="280" fill="url(#gl)"/><g fill='#ffd166'><rect class='lit' x='69' y='152' width='42' height='42' rx='2'/><rect class='lit' x='189' y='222' width='42' height='42' rx='2' style='animation-delay:-1s'/><rect class='lit' x='309' y='292' width='42' height='42' rx='2' style='animation-delay:-2s'/><rect class='lit' x='129' y='362' width='42' height='42' rx='2' style='animation-delay:-.5s'/><rect class='lit' x='249' y='152' width='42' height='42' rx='2' style='animation-delay:-1.6s'/></g><rect x="0" y="405" width="600" height="75" fill="#9aa1aa"/><rect x="0" y="405" width="600" height="14" fill="#d8d4cc"/><g fill="#2f7d4f"><circle cx="30" cy="380" r="36"/><circle cx="385" cy="384" r="32"/><circle cx="560" cy="382" r="38"/></g><g fill="#256a42"><circle cx="48" cy="392" r="26"/><circle cx="404" cy="396" r="22"/></g><g class='car'><rect x='0' y='428' width='66' height='16' rx='6' fill='#e11d2e'/><rect x='14' y='415' width='36' height='15' rx='5' fill='#b80f1f'/><rect x='19' y='418' width='26' height='9' rx='2' fill='#cfe3f5'/><circle cx='14' cy='446' r='6' fill='#0d0d0f'/><circle cx='52' cy='446' r='6' fill='#0d0d0f'/></g></svg>
+<div class='rip' aria-hidden='true'><i></i><i></i><i></i></div>
+<div class="bub" id="bub">“Namaste! Kya aap property ke baare mein jaanna chahte hain?”</div>
+<div class="phone"><div class="notch"></div><div class="scr"><div class="av"><svg width="38" height="30" viewBox="0 0 30 22"><g stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M3 9v4M9 5v12M15 1v20M21 5v12M27 9v4"/></g></svg></div><b>Awaaz AI</b><small>Calling Rohit S.</small><div class="wave" aria-hidden="true"></div><div class="ctl"><span><i></i>Mute</span><span><i></i>Keypad</span><span><i></i>Speaker</span></div><div class="end"></div></div></div>
+<div class="toast" role="status" id="tt"><i class="ck">✓</i><div><b>Site visit booked</b>Sat 11:00 · Rohit S.</div></div>
+</div>
+</div>
+
+<div class='mq' aria-hidden='true'><div id='mqi'><span>Hindi and English</span><span>24/7 answering</span><span>Inbound calls</span><span>Outbound follow-ups</span><span>Lead qualification</span><span>Site visit booking</span><span>Owner dashboard</span></div></div>
+
+<section class="soft"><div class="w">
+<div class="sub c"><span class="badge">Why choose Awaaz AI?</span><h2>Your Real Estate Business Deserves Better Lead Management.</h2></div>
+<div class="grid">
+<div class="card row"><span class="ic" data-i="phone"></span><div><h3>24/7 Lead Response</h3><p>Every inbound call is answered, day and night.</p></div></div>
+<div class="card row"><span class="ic" data-i="bolt"></span><div><h3>Faster Follow-ups</h3><p>New enquiries get a call within minutes.</p></div></div>
+<div class="card row"><span class="ic" data-i="home"></span><div><h3>More Site Visits</h3><p>Qualified leads are booked straight into your calendar.</p></div></div>
+</div></div></section>
+
+<section><div class="w split">
+<div class="dm">
+<aside><b>Awaaz AI</b><span class="on">Dashboard</span><span>Call Logs</span><span>Leads</span><span>Bookings</span><span>Properties</span><span>Settings</span></aside>
+<div class="dmain"><div class="dh"><b>Dashboard</b><span>Sample data</span></div>
+<div class="kp"><div>Total calls<b>248</b></div><div>Qualified leads<b>61</b></div><div>Site visits booked<b>19</b></div><div>Calling minutes<b>412 / 500</b></div></div>
+<div class="bars" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:60%"></i><i style="--h:85%"></i><i style="--h:55%"></i><i style="--h:75%"></i><i style="--h:95%"></i><i style="--h:65%"></i><i style="--h:80%"></i><i style="--h:100%"></i></div>
+<div class="tw"><table><thead><tr><th>Lead</th><th>Property</th><th>Budget</th><th>Status</th></tr></thead><tbody>
+<tr><td>Rohit S.</td><td>3BHK, Gomti Nagar</td><td>₹80 lakh</td><td><span class="st">Visit booked</span></td></tr>
+<tr><td>Anita M.</td><td>2BHK, Indirapuram</td><td>₹55 lakh</td><td><span class="st b">Qualified</span></td></tr>
+<tr><td>Vikram J.</td><td>Plot, Jaipur</td><td>₹40 lakh</td><td><span class="st n">In call</span></td></tr></tbody></table></div></div></div>
+<div><h2>Run every call from one dashboard.</h2><p>Only you can open it, and any settings change needs a login.</p>
+<ul class="ticks"><li>Live call activity and transcripts</li><li>Lead management</li><li>Site visit bookings</li><li>Property knowledge base</li></ul>
+<a class="btn k" href="#features">See Dashboard Features</a></div>
+</div></section>
+
+<section class="soft"><div class="w">
+<div class="sub c"><h2>How it works</h2><p>Get started in 3 simple steps.</p></div>
+<div class='flow' aria-hidden='true'><i></i></div>
+<div class="steps">
+<div class="card"><b>01</b><h3>Connect Your Properties</h3><p>Share your property information and calling details.</p></div>
+<div class="card"><b>02</b><h3>Activate Your AI Agent</h3><p>Configure the Hindi calling script and test the agent.</p></div>
+<div class="card"><b>03</b><h3>Start Converting Leads</h3><p>Let AI handle enquiries, follow-ups and site visit bookings.</p></div>
+</div>
+<div class="ctas" style="justify-content:center"><a class="btn" href="#contact">Book a Free Demo</a></div></div></section>
+
+<section><div class="w">
+<div class="sub c"><h2>Simple Pricing. Predictable. Built for Growth.</h2><p>A one-time setup fee and a simple monthly plan, with no hidden charges.</p></div>
+<div class="pr">
+<div class="card"><p>Pilot-client rate</p><strong>₹35,000 <small>one-time</small></strong><p><s>₹65,000</s></p><p>Agent development, Hindi calling script, dashboard, property data setup and testing.</p></div>
+<div class="card hot"><span class="tag">Most Popular</span><p>Monthly plan</p><strong>₹12,000 <small>/month</small></strong><p>Hosting, monitoring, script improvements, dashboard support and 500 calling minutes.</p></div>
+<div class="card"><p>Extra calling</p><strong>₹14 <small>per minute</small></strong><p>For each additional minute beyond the included 500 minutes.</p></div>
+</div>
+<div class="ctas" style="justify-content:center"><a class="btn k" href="#pricing">View Detailed Pricing</a></div></div></section>
+
+<section class="soft"><div class="w tiles">
+<div class="tile t1"><span class="ic" data-i="chat"></span><h3>Frequently Asked Questions</h3><p>Find answers to common questions about Awaaz AI.</p><a class="btn k" href="#faq">View all FAQs</a></div>
+<div class="tile t2"><span class="ic" data-i="chat"></span><h3>Tell us about your business.</h3><p>Fill in your details and we’ll get back to you on WhatsApp.</p><a class="btn o" href="#contact">Contact Us</a></div>
+<div class="tile t3"><h3>Your Next Property Buyer Is Waiting for a Call.</h3><p>Let Awaaz AI handle your enquiries while your team focuses on closing deals.</p><a class="btn" href="#contact">Book Your Free Demo</a></div>
+</div></section>
+</div>
+
+<!-- FEATURES -->
+<div class="pg" id="p-features">
+<section><div class="w">
+<div class="sub c"><span class="badge">Features</span><h2>Everything Your Sales Team Needs. One AI Agent.</h2></div>
+<div class="grid">
+<div class="card"><span class="ic" data-i="phone"></span><h3>AI Inbound Calling</h3><p>Answers incoming property enquiries in natural Hindi and English.</p></div>
+<div class="card"><span class="ic" data-i="out"></span><h3>AI Outbound Calling</h3><p>Automatically follows up with new and old property leads.</p></div>
+<div class="card"><span class="ic" data-i="filter"></span><h3>Smart Lead Qualification</h3><p>Collects budget, location, property type and buying timeline.</p></div>
+<div class="card"><span class="ic" data-i="cal"></span><h3>Automatic Site Visit Booking</h3><p>Helps arrange site visits based on customer availability.</p></div>
+<div class="card"><span class="ic" data-i="grid"></span><h3>Owner Dashboard</h3><p>Manage call logs, recordings, transcripts, qualified leads and bookings.</p></div>
+<div class="card"><span class="ic" data-i="book"></span><h3>Property Knowledge Base</h3><p>Keep property details, pricing and availability updated.</p></div>
+</div></div></section>
+<section class="soft"><div class="w">
+<div class="sub c"><h2>It already knows your properties.</h2><p>Load your list once. The agent answers questions about price, size, location and availability on every call.</p></div>
+<div class="grid">
+<article class="prop"><div class="pa"><svg viewBox="0 0 320 190" role="img" aria-label="Illustration of an apartment tower"><rect width="320" height="190" fill="url(#sk)"/><circle cx="262" cy="44" r="15" fill="#fff4c9"/><rect x="50" y="80" width="64" height="110" fill="#c9d3df"/><rect x="124" y="28" width="90" height="162" fill="#e8e2d8"/><rect x="130" y="36" width="78" height="146" fill="url(#gl)"/><rect x="224" y="92" width="56" height="98" fill="#d6dde6"/><rect y="176" width="320" height="14" fill="#9aa1aa"/></svg></div><div class="pb"><span class="st">For sale</span><h3>3 BHK Apartment</h3><p>Gomti Nagar, Lucknow</p><div class="pf"><b>₹80 lakh</b><span>1,450 sq ft</span></div></div></article>
+<article class="prop"><div class="pa"><svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a villa"><rect width="320" height="190" fill="url(#sk)"/><circle cx="44" cy="40" r="14" fill="#fff4c9"/><rect y="150" width="320" height="40" fill="#4c9a64"/><circle cx="56" cy="122" r="24" fill="#2f7d4f"/><rect x="92" y="98" width="140" height="56" fill="#f1ece3"/><polygon points="82,100 162,52 242,100" fill="#b3262f"/><rect x="150" y="122" width="24" height="32" rx="2" fill="#0d0d0f"/><rect x="106" y="112" width="28" height="22" rx="2" fill="#5d7fa6"/><rect x="190" y="112" width="28" height="22" rx="2" fill="#5d7fa6"/><circle cx="272" cy="128" r="20" fill="#2f7d4f"/></svg></div><div class="pb"><span class="st b">New launch</span><h3>4 BHK Villa</h3><p>Indirapuram, Ghaziabad</p><div class="pf"><b>₹1.9 crore</b><span>2,400 sq ft</span></div></div></article>
+<article class="prop"><div class="pa"><svg viewBox="0 0 320 190" role="img" aria-label="Illustration of a residential plot"><rect width="320" height="190" fill="url(#sk)"/><circle cx="54" cy="42" r="14" fill="#fff4c9"/><polygon points="0,120 320,104 320,190 0,190" fill="#4c9a64"/><polygon points="60,150 236,136 290,176 30,182" fill="#fff" fill-opacity=".25" stroke="#fff" stroke-width="2" stroke-dasharray="6 5"/><rect x="170" y="100" width="4" height="38" fill="#0d0d0f"/><rect x="138" y="66" width="68" height="34" rx="5" fill="#e11d2e"/><text x="172" y="89" text-anchor="middle" fill="#fff" font-size="15" font-weight="700" font-family="Manrope,sans-serif">PLOT</text></svg></div><div class="pb"><span class="st n">Available</span><h3>Residential Plot</h3><p>Jaipur Road, Jaipur</p><div class="pf"><b>₹40 lakh</b><span>200 sq yd</span></div></div></article>
+</div><p class="note" style="text-align:center;margin-inline:auto">Sample listings for illustration. Your own properties are loaded during setup.</p></div></section>
+</div>
+
+<!-- HOW -->
+<div class="pg" id="p-how">
+<section><div class="w">
+<div class="sub c"><span class="badge">How it works</span><h2>Get started in 3 simple steps.</h2></div>
+<div class='flow' aria-hidden='true'><i></i></div>
+<div class="steps">
+<div class="card"><b>01</b><h3>Connect Your Properties</h3><p>Share your property information and calling details.</p></div>
+<div class="card"><b>02</b><h3>Activate Your AI Agent</h3><p>Configure the Hindi calling script and test the agent.</p></div>
+<div class="card"><b>03</b><h3>Start Converting Leads</h3><p>Let AI handle enquiries, follow-ups and site visit bookings.</p></div>
+</div></div></section>
+<section class="soft"><div class="w">
+<div class="sub c"><h2>14-day pilot on your real leads</h2><p>Try it before you commit to the monthly plan.</p></div>
+<div class="tl">
+<div class="card"><h3>Week 1 · Setup</h3><p>Property data, Hindi scripts and testing.</p></div>
+<div class="card"><h3>Week 2 · Go Live</h3><p>AI handles real inbound and outbound enquiries.</p></div>
+<div class="card"><h3>Final Review</h3><p>Review results and decide whether to continue.</p></div>
+</div>
+<p class="hl">The monthly fee begins only after the pilot.</p>
+<div class="chips"><span>Calls answered</span><span>Leads called</span><span>Leads qualified</span><span>Site visits booked</span><span>Minutes used</span><span>Cost per site visit</span></div>
+</div></section>
+</div>
+
+<!-- PRICING -->
+<div class="pg" id="p-pricing">
+<section><div class="w">
+<div class="sub c"><span class="badge">Pricing</span><h2>Simple Pricing. Predictable. Built for Growth.</h2></div>
+<div class="pr">
+<div class="card"><p>Pilot-client rate</p><strong>₹35,000 <small>one-time</small></strong><p><s>Standard price ₹65,000</s></p><p>Includes agent development, Hindi calling script, dashboard, property data setup and testing.</p></div>
+<div class="card hot"><span class="tag">Most Popular</span><p>Monthly plan</p><strong>₹12,000 <small>/month</small></strong><p>Includes hosting, monitoring, script improvements, dashboard support and 500 calling minutes.</p></div>
+<div class="card"><p>Extra calling</p><strong>₹14 <small>per minute</small></strong><p>For each additional minute beyond the included 500 minutes, billed monthly.</p></div>
+</div>
+<p class="note">Prices exclude GST, if applicable. Any charges from your phone provider for your own number are billed to you directly. Payment: ₹17,500 to start and ₹17,500 at go-live. The monthly fee begins after the pilot and is billed in advance.</p>
+<div class="calc"><label for="mins">Estimate your monthly cost: calling minutes per month</label>
+<input id="mins" type="range" min="200" max="2000" step="50" value="500">
+<div class="cr"><div><span>Minutes</span><output id="o1" for="mins">500</output></div><div><span>Extra minutes</span><output id="o2">0</output></div><div><span>Monthly cost</span><output id="o3">₹12,000</output></div></div></div>
+</div></section>
+</div>
+
+<!-- FAQ -->
+<div class="pg" id="p-faq">
+<section><div class="w" style="max-width:800px">
+<div class="sub c"><span class="badge">FAQ</span><h2>Frequently asked questions</h2></div>
+<details><summary>Who does the AI agent call?</summary><p>Only people who enquired with you. We check calling rules before outbound goes live.</p></details>
+<details><summary>How do payments work?</summary><p>₹17,500 to start and ₹17,500 at go-live. The monthly fee begins after the pilot and is billed in advance.</p></details>
+<details><summary>Can I add English or CRM integrations?</summary><p>Yes. New languages, CRM integrations and extra features are quoted separately.</p></details>
+<details><summary>What do you need from me?</summary><p>Your property list and the phone number the agent will call from.</p></details>
+<details><summary>How does the 14-day pilot work?</summary><p>In week 1 we load your properties, tune the Hindi script and test calls with you. In week 2 the agent goes live on real leads. Then we review the results together and you decide whether to continue.</p></details>
+</div></section>
+</div>
+
+<!-- CONTACT -->
+<div class="pg" id="p-contact">
+<section><div class="w" style="max-width:860px">
+<div class="sub c"><span class="badge">Contact</span><h2>Tell us about your business.</h2><p>Fill in your details and send them to us on WhatsApp. We’ll reply to set up your free demo.</p></div>
+<form class="fm" id="enq" novalidate>
+<div class="f"><label for="n">Full name</label><input id="n" autocomplete="name" required></div>
+<div class="f"><label for="p">Mobile number</label><input id="p" type="tel" inputmode="tel" autocomplete="tel" placeholder="98XXXXXXXX" required></div>
+<div class="f"><label for="e">Email <small>(optional)</small></label><input id="e" type="email" autocomplete="email"></div>
+<div class="f"><label for="co">Company or agency name <small>(optional)</small></label><input id="co" autocomplete="organization"></div>
+<div class="f full"><label for="a">Address</label><input id="a" autocomplete="street-address" placeholder="Office address, city" required></div>
+<div class="f"><label for="t">I am a</label><select id="t"><option>Independent broker</option><option>Real estate agency</option><option>Builder or developer</option><option>Channel partner</option><option>Other</option></select></div>
+<div class="f"><label for="l">New leads per month</label><select id="l"><option>Less than 50</option><option>50 to 200</option><option>200 to 500</option><option>More than 500</option><option>Not sure</option></select></div>
+<fieldset class="full"><legend>What do you want?</legend><div class="chk"><label><input type="checkbox" name="w" value="Inbound calling"> Inbound calling</label><label><input type="checkbox" name="w" value="Outbound calling"> Outbound calling</label><label><input type="checkbox" name="w" value="Lead qualification"> Lead qualification</label><label><input type="checkbox" name="w" value="Site visit booking"> Site visit booking</label><label><input type="checkbox" name="w" value="Owner dashboard"> Owner dashboard</label><label><input type="checkbox" name="w" value="English support"> English support</label><label><input type="checkbox" name="w" value="CRM integration"> CRM integration</label></div></fieldset>
+<div class="f"><label for="ld">Where do your leads come from?</label><select id="ld"><option>Facebook or Instagram ads</option><option>99acres, MagicBricks or Housing</option><option>Google ads or website</option><option>Referrals and walk-ins</option><option>Multiple sources</option></select></div>
+<div class="f"><label for="ct">Best time to contact you</label><select id="ct"><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Any time</option></select></div>
+<div class="f full"><label for="q">Your question or requirement <small>(optional)</small></label><textarea id="q" placeholder="Tell us what you need or ask anything"></textarea></div>
+<div class="f full"><button class="btn wa" type="submit">Send on WhatsApp</button><p id="fmsg" role="status"></p></div>
+</form>
+<div class="ctas" style="justify-content:center"><a class="btn o" data-wa="Namaste, I want a free demo of Awaaz AI." href="#">Or message us directly</a></div>
+</div></section>
+</div>
+
+<!-- LEGAL -->
+<div class="pg legal" id="p-legal"><div class="w" style="max-width:780px">
+<h3 id="privacy">Privacy Policy</h3>
+<p>Your leads, call data, recordings and dashboard login stay yours. We use them only to run your agent and do not share or sell them. Outbound calls go only to people who enquired with you.</p>
+<h3 id="terms">Terms and Conditions</h3>
+<p>Work starts once you approve the proposal and pay half of the setup fee. The monthly fee begins after the 14-day pilot. New languages, CRM integrations or extra features are quoted separately. Prices exclude GST, if applicable.</p>
+</div></div>
+</main>
+
+<footer><div class="w fg">
+<div><a class="logo" href="#home">Awaaz AI</a><p style="margin-top:12px">AI voice calling for Indian real estate. Answers enquiries, follows up with leads and books site visits in Hindi and English.</p></div>
+<div><h3>Explore</h3><ul><li><a href="#features">Features</a></li><li><a href="#how">How It Works</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+<div><h3>Contact</h3><ul><li><a data-wa="Namaste, I want to know more about Awaaz AI." href="#">WhatsApp: +91 83840 59345</a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#terms">Terms and Conditions</a></li></ul></div>
+</div><div class="w" style="margin-top:28px;color:var(--mu)">© 2026 Awaaz AI. All rights reserved.</div></footer>
+
+<script>
+(function(){
+var WHATSAPP_NUMBER='918384059345';
+var I={phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',out:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2zM14 3h7v7M21 3l-6 6"/>',bolt:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',home:'<path d="M3 11 12 3l9 8v10H3z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',cal:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',grid:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>',book:'<path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/>',filter:'<path d="M3 5h18l-7 8v6l-4-2v-4z"/>',chat:'<path d="M4 5h16v11H9l-5 4z"/>'};
+document.querySelectorAll('[data-i]').forEach(function(e){e.innerHTML='<svg viewBox="0 0 24 24">'+I[e.dataset.i]+'</svg>'});
+document.querySelectorAll('[data-wa]').forEach(function(a){a.href='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(a.getAttribute('data-wa'));a.target='_blank';a.rel='noopener'});
+var w=document.querySelector('.wave');if(w){for(var i=0;i<22;i++){var b=document.createElement('i');b.style.animationDelay=(-(i*0.37%1.1)).toFixed(2)+'s';b.style.animationDuration=(0.8+(i*7%5)/10).toFixed(1)+'s';w.appendChild(b)}}
+var s=document.getElementById('mins'),o1=document.getElementById('o1'),o2=document.getElementById('o2'),o3=document.getElementById('o3');
+function u(){var v=+s.value,x=Math.max(0,v-500);o1.textContent=v;o2.textContent=x;o3.textContent='₹'+(12000+x*14).toLocaleString('en-IN')}
+s.addEventListener('input',u);u();
+var fm=document.getElementById('enq'),msg=document.getElementById('fmsg');
+fm.addEventListener('submit',function(ev){ev.preventDefault();
+var g=function(i){return document.getElementById(i).value.trim()},ph=g('p').replace(/[^0-9]/g,'');
+if(!g('n')||!g('a')){msg.style.color='#b80f1f';msg.textContent='Please fill in your name and address.';return}
+var localPh=ph.length===12&&ph.slice(0,2)==='91'?ph.slice(2):ph;
+if(!/^[6-9][0-9]{9}$/.test(localPh)){msg.style.color='#b80f1f';msg.textContent='Please enter a valid Indian mobile number (10 digits).';return}
+var ws=[].map.call(fm.querySelectorAll('input[name=w]:checked'),function(c){return c.value}).join(', ')||'Not selected';
+var t=['*New enquiry from Awaaz AI website*','Name: '+g('n'),'Mobile: '+g('p'),g('e')?'Email: '+g('e'):'',g('co')?'Company: '+g('co'):'','Address: '+g('a'),'I am a: '+g('t'),'Leads per month: '+g('l'),'Lead source: '+g('ld'),'Wants: '+ws,'Best time to contact: '+g('ct'),g('q')?'Question: '+g('q'):''].filter(Boolean).join('\n');
+var url='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(t);
+msg.style.color='#15803d';msg.textContent='Opening WhatsApp. Press send to share your details with us.';
+var l=document.createElement('a');l.href=url;l.target='_blank';l.rel='noopener';document.body.appendChild(l);l.click();l.remove()});
+var pages=['home','features','how','pricing','faq','contact'],ttl={home:'Home',features:'Features',how:'How It Works',pricing:'Pricing',faq:'FAQ',contact:'Contact',legal:'Privacy and Terms'},links=document.querySelectorAll('.nav ul a'),mb=document.querySelector('.mb'),menu=document.getElementById('menu');
+function closeM(){menu.classList.remove('open');mb.setAttribute('aria-expanded','false')}
+mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A')closeM()});
+function route(){var h=(location.hash||'#home').slice(1),leg=(h==='privacy'||h==='terms'),name=leg?'legal':(pages.indexOf(h)>-1?h:'home');
+document.querySelectorAll('.pg').forEach(function(p){p.classList.toggle('on',p.id==='p-'+name)});
+links.forEach(function(a){if(a.getAttribute('href')==='#'+name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+document.title=ttl[name]+' | Awaaz AI';closeM();
+var t=leg?document.getElementById(h):null;if(t)t.scrollIntoView();else window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);route();
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;el.classList.add('in');io.unobserve(el);setTimeout(function(){el.classList.remove('rv');el.style.transitionDelay=''},900)}})},{threshold:.12});
+document.querySelectorAll('.sub,.card,.prop,.dm,.tile,.calc,.hl').forEach(function(el){var i=[].indexOf.call(el.parentNode.children,el);el.style.transitionDelay=(i%4*90)+'ms';el.classList.add('rv');io.observe(el)})}
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var mq=document.getElementById('mqi');if(mq)mq.innerHTML+=mq.innerHTML;
+var pb=document.getElementById('pbar');function sc(){if(!pb)return;var h=document.documentElement.scrollHeight-innerHeight;pb.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'}
+addEventListener('scroll',sc,{passive:true});addEventListener('hashchange',function(){setTimeout(sc,60)});sc();
+function cnt(){document.querySelectorAll('.kp b').forEach(function(el){var m=el.textContent.match(/^(\d+)(.*)$/);if(!m)return;var to=+m[1],suf=m[2],t0=performance.now();(function f(t){var k=Math.min(1,(t-t0)/1200),e=1-Math.pow(1-k,3);el.textContent=Math.round(to*e)+suf;if(k<1)requestAnimationFrame(f)})(t0)})}
+if(!rm){
+var bub=document.getElementById('bub'),tt=document.getElementById('tt'),n=0,L=['“Namaste! Kya aap property ke baare mein jaanna chahte hain?”','“Aapka budget kitna hai? Kaun si location pasand hai?”','“Shanivaar 11 baje site visit book kar dun?”','“Dhanyavaad! Aapki visit confirm ho gayi hai.”'],T=[['Site visit booked','Sat 11:00 · Rohit S.'],['Lead qualified','₹80 lakh · Gomti Nagar'],['Transcript saved','Recording ready']];
+setInterval(function(){n++;bub.textContent=L[n%L.length];bub.style.animation='none';void bub.offsetWidth;bub.style.animation='pop .5s both';var q=T[n%T.length];tt.innerHTML='<i class="ck">✓</i><div><b>'+q[0]+'</b>'+q[1]+'</div>';tt.style.animation='none';void tt.offsetWidth;tt.style.animation='pop .5s both,fl2 4s .5s ease-in-out infinite alternate'},4200);
+var dm=document.querySelector('.dm');if(dm&&'IntersectionObserver' in window){new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();cnt()}},{threshold:.35}).observe(dm)}}
+})();
+</script>
+</body>
+</html>
